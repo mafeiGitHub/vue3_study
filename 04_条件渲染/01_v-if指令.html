@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <template id="mwf">
+      <div>
+        <h2 v-if = 'isShow'>{{msg}}</h2>
+        <h2>{{msg}}</h2>
+        <input type="text" v-model="score">
+        <div v-if="score>90">优秀</div>
+        <div v-else-if="score>80">优秀</div>
+        <div v-else-if="score>70">良好</div>
+        <div v-else-if="score>60">及格</div>
+        <div v-else>不及格</div>
+      </div>
+    </template>
+    <script src="../lib/vue.js"></script>
+    <script>
+      const App = {
+        template: "#mwf",
+        data: function () {
+          return {
+            msg: "hello world",
+            isShow:true,
+            score:90
+          };
+        },
+        methods: {},
+      };
+      Vue.createApp(App).mount("#app");
+    </script>
+  </body>
+</html>
+<!-- v-if配合template使用，最终template不会被渲染出来 -->

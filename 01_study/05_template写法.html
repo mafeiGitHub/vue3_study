@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="app"></div>
+    <!-- template写法一 -->
+    <!-- <script type="x-template" id="mwf">
+      <h2>{{message}}</h2>
+          <h3 class="counter">{{counter}}</h3>
+          <button class="increment" @click='increment'>+1</button>
+          <button class="decrement" @click='decrement'>-1</button>
+    </script> -->
+    <!-- template写法二 -->
+    <template id="mwf">
+      <div>
+        <h2>{{message}}</h2>
+        <h3 class="counter">{{counter}}</h3>
+        <button class="increment" @click="increment">+1</button>
+        <button class="decrement" @click="decrement">-1</button>
+      </div>
+    </template>
+
+    <script src="../js/vue.js"></script>
+    <script>
+      Vue.createApp({
+        template: "#mwf",
+        data: function () {
+          return {
+            message: "你好啊",
+            counter: 100,
+          };
+        },
+        methods: {
+          increment() {
+            this.counter += 1;
+          },
+          decrement() {
+            this.counter--;
+          },
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>

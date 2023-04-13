@@ -1,0 +1,54 @@
+<!--
+ * @Date: 2023-03-29 20:36:02
+ * @LastEditors: wfma
+ * @LastEditTime: 2023-03-29 20:36:04
+ * @FilePath: \vue3_study\02_vue3基本指令\04_test.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>一行里面有3个div，怎么做到左边和右边中间对齐</title>
+    <style>
+        .content {
+            overflow: hidden;  /*清除浮动*/
+        }
+
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: #000;
+            float: left;
+        }
+
+        .box2 {
+            width: 600px;
+            height: 200px;
+            background-color: #342;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .box3 {
+            width: 200px;
+            height: 200px;
+            background-color: #098;
+            float: right;
+        }
+        /*利用的原理就是左边和右边进行浮动，然后中间给出你想要的宽高，然后使用margin：0 auto进行居中，因为左右浮动后就不会占用文档流了。但是一定要注意放置的位置，中间的一块要放在左右的后面才可以*/
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="box1">左边</div>
+        <div class="box3">右边</div>
+        <div class="box2">中间</div>
+
+    </div>
+</body>
+
+</html>

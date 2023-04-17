@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+</head>
+<body>
+<div id="app"></div>
+<template id="my-app">
+    <component-a></component-a>
+    <hr>
+    <component-b></component-b>
+</template>
+<template id="component-a">
+    <h2>我是标题:组件1</h2>
+    <p>我是内容，哈哈哈哈</p>
+    <button @click="btnClick">按钮</button>
+</template>
+<template id="component-b">
+    <h2>我是标题:组件2</h2>
+   <input v-model="msg">
+    <h2>{{msg}}</h2>
+</template>
+<script src="../lib/vue.js"></script>
+<script>
+    const App = {
+        template :'#my-app'
+    }
+    const app = Vue.createApp(App)
+    app.component('component-a',{
+        template: "#component-a",
+        data(){
+            return{
+                msg:"哈哈哈"
+            }
+        },
+        methods:{
+            btnClick(){
+                console.log('点击了')
+            }
+        }
+    })
+    app.component('component-b',{
+        template: "#component-b",
+        data(){
+            return{
+                msg:"哈哈哈"
+            }
+        }
+    })
+
+    app.mount('#app')
+</script>
+</body>
+</html>
+<!--两种组件的命名规范 大驼峰和kebab-case（烤串类型）-->

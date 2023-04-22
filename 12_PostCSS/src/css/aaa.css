@@ -1,5 +1,6 @@
 .title{
     color: #009988;
-    font-size: 100px;
+    font-size: 24px;
+    user-select: none;
     display: flex;
 }

@@ -5,11 +5,15 @@
     </div>
 </template>
 
-<script setup>
+<script >
+
 import HelloWorld from './HelloWorld.vue';
-components:{
-    HelloWorld
+export default {
+    components:{
+        HelloWorld
+    }
 }
+
 
 </script>
 

@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <div class="tilte">你好</div>
+        <div class="tilte">你好1</div>
         <hello-world></hello-world>
     </div>
 </template>
